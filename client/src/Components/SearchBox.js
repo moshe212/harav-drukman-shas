@@ -44,7 +44,7 @@ const SearchBox = (props) => {
   useEffect(() => {
     const data = props.data;
     if (props.choseID === "masechet") {
-      console.log("data", data);
+      //console.log("data", data);
       let uniqueObjArray = [
         ...new Map(data.map((item) => [item["TractateName"], item])).values(),
       ];
@@ -53,8 +53,8 @@ const SearchBox = (props) => {
         (item) => item["isfullTractate"] === "TRUE"
       );
 
-      console.log("uniqueObjArray", uniqueObjArray);
-      console.log("uniqueObjArrayFiterd", uniqueObjArrayFiterd);
+      //console.log("uniqueObjArray", uniqueObjArray);
+      //console.log("uniqueObjArrayFiterd", uniqueObjArrayFiterd);
 
       setResult(uniqueObjArrayFiterd);
       setDataToChose(uniqueObjArrayFiterd);
@@ -80,7 +80,7 @@ const SearchBox = (props) => {
   }, []);
 
   const handleSelect = (value, option) => {
-    console.log(value, option);
+    //console.log(value, option);
   };
   const antIcon = (
     <LoadingOutlined

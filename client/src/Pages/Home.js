@@ -14,7 +14,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [studyDetails, setStudyDetails] = useState([]);
   const { id } = useParams();
-  console.log(id);
+  //console.log(id);
   // console.log(starCount);
 
   let history = useHistory();
@@ -24,7 +24,7 @@ const Home = () => {
   }
 
   const handelAvailable = (newValue) => {
-    console.log("isAvailable", newValue);
+    //console.log("isAvailable", newValue);
     setIsAvailable(newValue);
   };
 
@@ -33,7 +33,7 @@ const Home = () => {
       .post("/api/getAllShas")
       .then(function (response) {
         setData(response.data);
-        console.log("response.data", response.data);
+        //console.log("response.data", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -45,7 +45,7 @@ const Home = () => {
       .post("/api/getStudyDetails")
       .then(function (response) {
         setStudyDetails(response.data);
-        console.log("Studydata", response.data);
+        //console.log("Studydata", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -61,7 +61,7 @@ const Home = () => {
               className="item1"
               src="/Images/book.png"
               alt=""
-              onClick={handleClick}
+              // onClick={handleClick}
             ></img>
 
             <div className="item2">חלוקת הש"ס</div>
@@ -79,9 +79,9 @@ const Home = () => {
             >
               מצב נוכחי
             </AnchorLink>
-            <div className="item5" onClick={handleClick}>
+            {/* <div className="item5" onClick={handleClick}>
               הספרים
-            </div>
+            </div> */}
             <AnchorLink
               offset={() => 250}
               className="item6"
@@ -89,14 +89,14 @@ const Home = () => {
             >
               הצטרף עכשיו
             </AnchorLink>
-            <div className="books-phone-view-btn" onClick={handleClick}>
+            {/* <div className="books-phone-view-btn" onClick={handleClick}>
               הספרים
-            </div>
+            </div> */}
           </div>
           {/* <BizTicker /> */}
         </div>
       </div>
-      <img className="ProjectImg" src="/Images/design4plus.jpg" alt=""></img>
+      <img className="ProjectImg" src="/Images/drukman.jpg" alt=""></img>
       {/* <div className="donate">תרומה</div> */}
       <div className="ProjectDetails">
         {data && (
@@ -133,27 +133,33 @@ const Home = () => {
         <div className="ProjectText">
           <div className="TextOnProject" id="TextOnProject">
             <p className="TextOnProject_P">
-              הרב שלמה אנסבכר ז"ל נולד בשנת תש"ה, בשבת בה הגיע למצוות קראו בתורה
-              בסדר "אם בחוקותיי תלכו" שעל זה פ'רש"י : "שתהיו עמלים בתורה". ציווי
-              זה קיים הרב שלמה ז"ל במשך כל שנות חייו בדרכים שונות.<br></br>
-              <br></br> בצעירותו שקד על התורה בישיבת פוניבז' , שם קנה את צורת
-              הלימוד בעיון. לאחר מכן מסיבות שונות נאלץ לעזוב את ספסלי בית המדרש
-              ויצא לשנים ארוכות של עמל כפיים. תקופה זו בעולם המעשה שבה חלם
-              והתמיד בכיסופיו לחזור לעולמה של תורה, עולם "השכל הטהור" כלשונו,
-              תרמה רבות הן לתורתו והן ליכולתו להקשיב, להבין ולייעץ לתלמידיו.
-              ואכן בשנת תש"מ זכה להגשים את חלומו והחל ללמוד בישיבת "ניר קריית
-              ארבע" ולאחר מספר שנים נתבקש לשמש בהוראה בישיבה.<br></br>
-              <br></br> הרב שלמה ז"ל התייגע מאוד על הכנת כל שיעור ושיעור, הוא
-              התבטא פעם שיכולותיו בינוניות ולכן נדרש ממנו מעבר ליכולתו. הוא היה
-              יושב ומתעמק בספרים עד השעות הקטנות של הלילה, ולמחרת היה מלבן את
-              הדברים עם החברותא (אחד מתלמידיו) ולאחר שהשיעור היה מסודר במוחו היה
-              מעלה אותו על הכתב ומעבירו לתלמידיו.<br></br>
-              <br></br> כך נהג במשך כ-20 שנה עד כט' בטבת ה'תשס"ג עת החזיר נשמתו
-              לבוראו.<br></br>
-              <br></br> הרב שלמה ז"ל כל כך אהב את לימוד הגמרא והיה שקוע בה רוב
-              ימיו, גם ממיטת חוליו אהב לדון בסוגיות הש"ס עם מבקריו. לקראת יום
-              השנה ה-20 לפטירתו ברצוננו לסיים ש"ס בבלי לעילוי נשמתו ונשמח אם
-              תוכלו לקחת חלק במפעל חשוב זה .{" "}
+              הרב חיים דרוקמן זצ"ל נולד בשנת תרצ"ג בקוטי שבפולין. את ילדותו
+              העביר בצל מלחמת העולם השניה תוך שהוא והוריו בורחים ומסתתרים
+              מהנאצים. בחודש אב תש"ד הצליח לעלות לארץ ישראל ולאחר סיום המלחמה
+              עלו גם הוריו ארצה.<br></br>
+              <br></br>
+              בנערותו למד בישיבת כפר הרא"ה אצל הרב נריה והרב צוקרמן זצ"ל ולאחר
+              שירות צבאי הקים יחד עם חבריו את ישיבת כרם ביבנה ואח"כ עבר ללמוד
+              בישיבת מרכז הרב אצל הרב צבי יהודה זצ"ל. בשנת תשכ"ג שלח אותו הרב
+              צבי יהודה זצ"ל לעמוד בראשות הישיבה התיכונית "אור עציון" בה למדו
+              אצלו רבים מבין אנשי הציבור המשמשים כיום בתפקידי מפתח בציבוריות
+              הישראלית. לאחר מכן בשנת תשל"ז הקים הרב דרוקמן זצ"ל את הישיבה
+              הגבוהה באור עציון בה שימש כראש הישיבה עד ימיו האחרונים.<br></br>
+              <br></br>
+              ביום העצמאות תשע"ב קיבל הרב דרוקמן זצ"ל פרס ישראל על מפעל חיים
+              ובנימוקי השופטים נכתב: "בכל שנות פעילותו תרם הרב דרוקמן תרומה
+              ניכרת וחשובה לקירוב בין חלקי העם מתוך אהבת ישראל אמיתית".
+              <br></br>
+              <br></br>
+              הרב חיים דרוקמן זצ"ל היה רב, מחנך ואיש עשיה ללא לאות למען עם ישראל
+              וארץ ישראל. בכל שנותיו חינך דורות על ברכי התורה בשילוב עם עשיה בכל
+              תחומי החיים. ביתו וזמנו היו נתונים כולם למען חינוך וגידול של
+              תלמידי חכמים המעורבים בעשיה למען הכלל אם בהקמת מכינות וישיבות, אם
+              בהקמת מפעל ההתנחלויות ואם בפעילות פרלמנטרית בכנסת.
+              <br></br>
+              <br></br>
+              אנחנו מזמינים אתכם לקחת חלק במיזם סיום הש"ס לעילוי נשמתו של הרב
+              חיים דרוקמן זצ"ל.{" "}
             </p>
           </div>
         </div>

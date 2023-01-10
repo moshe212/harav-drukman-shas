@@ -59,8 +59,8 @@
   color: black;
 }
 
-.item5 {
-  grid-column: 5/13;
+.item4 {
+  grid-column: 4/13;
   text-align: start;
   padding-right: 5%;
 }
@@ -389,8 +389,6 @@
   .Form {
     width: 80% !important;
   }
-
-  
 }
 
 @media screen and (max-width: 750px) {
@@ -444,13 +442,13 @@
   }
 } */
 
-.all-rights-reserved{
+.all-rights-reserved {
   background-color: #780012;
 }
 
-.study-list{
+.study-list {
   background-attachment: fixed;
-  background-image:  url("../../public/Images/clear_background.jpg"); 
+  background-image: url("../../public/Images/clear_background.jpg");
   /* height: 600px; */
   height: fit-content;
   display: flex;

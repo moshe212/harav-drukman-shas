@@ -15,7 +15,7 @@ const List = (props) => {
   ) => {
     props.onChange(state, details, choseID, id, TractateCounter, TractateName);
   };
-  console.log("items", props.items);
+  //console.log("items", props.items);
   return (
     <div className="scroll">
       {props.items.map((item, index) => (
@@ -25,7 +25,7 @@ const List = (props) => {
             type="primary"
             shape="round"
             onClick={(e) => {
-              console.log("gemara", item);
+              //console.log("gemara", item);
               Choose(
                 "true",
                 props.choseID === "masechet"

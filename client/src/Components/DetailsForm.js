@@ -10,7 +10,7 @@ const DetailsForm = (props) => {
 
   const Send = (state) => {
     props.satusMainBtn(state);
-    console.log("send", state);
+    //console.log("send", state);
   };
 
   const Close = () => {
@@ -19,21 +19,21 @@ const DetailsForm = (props) => {
   };
 
   const getValueFromEvent = (e) => {
-    console.log("e", e.target.value);
+    //console.log("e", e.target.value);
     let nam = e.target.name;
     let val = e.target.value;
     setLearnDetails({ ...learnDetails, [nam]: val });
   };
   const onFinish = (values) => {
-    console.log("values", values);
-    console.log("Success:", learnDetails);
-    console.log("Details:", props.Details);
+    //console.log("values", values);
+    //console.log("Success:", learnDetails);
+    //console.log("Details:", props.Details);
     props.onSend("true", learnDetails);
     Send("true");
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    //console.log("Failed:", errorInfo);
   };
 
   return (

@@ -29,6 +29,7 @@ if (port == null || port == "") {
 let Mongo_Path = process.env.Mongo_Path;
 
 function connectToDB() {
+  mongoose.set("strictQuery", true);
   const connection = mongoose.connect(Mongo_Path, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -40,7 +41,7 @@ function connectToDB() {
 }
 
 app.post("/api/LearnRegistration", async (req, res) => {
-  console.log(req.body);
+  console.log("req", req.body);
   const gemara = req.body.detailsToSRV.gemara;
   const choseID = req.body.detailsToSRV.choseID;
   const id = req.body.detailsToSRV.id;
@@ -101,7 +102,7 @@ app.post("/api/LearnRegistration", async (req, res) => {
 });
 
 app.post("/api/getAllShas", async (req, res) => {
-  console.log(req.body);
+  console.log("all", req.body);
   const data = await mongoFunc.getAllShas();
 
   res.status(200).send(data);
